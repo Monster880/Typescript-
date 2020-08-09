@@ -16,6 +16,7 @@ function echoWithArr<T>(arg: T[]):T[]{
 
 const arrs = echoWithArr([1,2,3])
 
+// 泛型拥有length属性
 interface IWithLength{
     length:number
 }
@@ -29,18 +30,48 @@ const str3 = echoWithLength('str')
 const obj = echoWithLength({length:10,width:10})
 const arr2 = echoWithLength([1,2,3])
 
-class Queue {
+//限定同类
+class Queue<T> {
     private data = [];
-    push(item){
+    push(item:T){
         return this.data.push(item)
     }
-    pop(){
+    pop():T{
         return this.data.shift()
     }
 }
 
-const queue = new Queue()
+const queue = new Queue<number>()
 queue.push(1)
-queue.push('str')
 console.log(queue.pop().toFixed())
-console.log(queue.pop().toFixed())
+
+const queue2 = new Queue<string>()
+queue2.push('str')
+console.log(queue2.pop().length)
+
+//interface描述对象
+interface KeyPair<T, U>{
+    key: T;
+    value: U;
+}
+
+let kp1: KeyPair<number, string> = {key: 123, value: "str"}
+let kp2: KeyPair<string,number> = {key: 'test',value:123}
+
+let arr: number[] = [1,2,3]
+
+let arrTwo: Array<number> = [1,2,3]
+
+//通过interface定义函数类型
+interface IPlus<T>{
+    (a:T,b:T) : T
+}
+
+function plus(a:number,b:number):number{
+    return a+b
+}
+function connect(a:string,b:string):string{
+    return a+b
+}
+const a:IPlus<number> = plus
+const b:IPlus<string> = connect

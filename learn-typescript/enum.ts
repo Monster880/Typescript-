@@ -1,4 +1,4 @@
-// 只有常量值能用内联
+// 只有常量值能用内联，没有const则是双向绑定
 const enum Direction {
     Up='UP',
     Down='DOWN',

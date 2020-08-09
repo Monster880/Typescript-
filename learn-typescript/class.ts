@@ -32,6 +32,7 @@ class Cat extends Animal{
         console.log(this.name)
     }
     run(){
+        // 调用父类方法用super
         return 'Meow, ' + super.run()
     }
 }
@@ -40,6 +41,7 @@ const maomao = new Cat('maomao')
 // console.log(maomao.run())
 
 
+//interface定义一些方法
 interface Radio{
     switchRadio():void;
 }

@@ -9,6 +9,7 @@ const add = function add(x:number,y:number,z:number=10):number{
     }
 }
 
+// 注意箭头和es6箭头不一样
 const add2: (x:number,y:number,z?:number) => number= add
 
 let result= add(2,3)
