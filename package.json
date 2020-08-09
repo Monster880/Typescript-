@@ -1,0 +1,11 @@
+{
+  "name": "Typescript-Study",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Monster880/Typescript-.git",
+  "author": "Li Ding <liding.liding@bytedance.com>",
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^4.44.1"
+  }
+}
