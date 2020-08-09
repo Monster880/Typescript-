@@ -33,3 +33,4 @@ function getLength(input: string |  number):number{
         return input.toString().length
     }
 }
+
